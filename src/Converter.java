@@ -1,9 +1,11 @@
+
+import java.awt.*;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Nabuletion
@@ -43,17 +45,17 @@ public class Converter extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton6 = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
+        inputWeight = new javax.swing.JTextField();
+        convertWeight = new javax.swing.JButton();
+        weightAnswer = new javax.swing.JLabel();
         lenghtPanel = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        initialLength = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jButton7 = new javax.swing.JButton();
-        jLabel11 = new javax.swing.JLabel();
+        inputLength = new javax.swing.JTextField();
+        convertLength = new javax.swing.JButton();
+        answerLength = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jComboBox5 = new javax.swing.JComboBox<>();
         areaPanel = new javax.swing.JPanel();
@@ -99,27 +101,29 @@ public class Converter extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Unit Converter");
 
-        jLabel1.setText("logo");
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nabuletion\\Documents\\Unit2.jpg")); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jLabel1)
-                .addGap(170, 170, 170)
+                .addContainerGap(143, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(232, Short.MAX_VALUE))
+                .addGap(94, 94, 94))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32))
+                .addContainerGap(32, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29))
         );
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.PAGE_START);
@@ -224,16 +228,21 @@ public class Converter extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel6.setText("Value");
 
-        jTextField1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        inputWeight.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        inputWeight.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
-        jButton6.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
-        jButton6.setText("Convert");
-        jButton6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        convertWeight.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
+        convertWeight.setText("Convert");
+        convertWeight.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        convertWeight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                convertWeightActionPerformed(evt);
+            }
+        });
 
-        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("15 kg is equivalent to 1500 grams");
+        weightAnswer.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        weightAnswer.setForeground(new java.awt.Color(0, 0, 204));
+        weightAnswer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout weightPanelLayout = new javax.swing.GroupLayout(weightPanel);
         weightPanel.setLayout(weightPanelLayout);
@@ -256,12 +265,12 @@ public class Converter extends javax.swing.JFrame {
                         .addGap(177, 177, 177)
                         .addGroup(weightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(inputWeight, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(weightAnswer, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(weightPanelLayout.createSequentialGroup()
                         .addGap(134, 134, 134)
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(193, Short.MAX_VALUE))
+                        .addComponent(convertWeight, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(277, Short.MAX_VALUE))
         );
         weightPanelLayout.setVerticalGroup(
             weightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -279,11 +288,11 @@ public class Converter extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(weightPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputWeight, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(convertWeight, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(weightAnswer, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(147, Short.MAX_VALUE))
         );
 
@@ -298,28 +307,28 @@ public class Converter extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel9.setText("Initial Unit");
 
-        jComboBox3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kilometer", "Meter", "Yard", "Miles", "Centimeter", "Inches", " " }));
+        initialLength.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        initialLength.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mile", "Kilometer", "Meter", "Yard", "Foot", "Centimeter", "Inche", " " }));
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel10.setText("Value");
 
-        jTextField2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        inputLength.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        inputLength.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
 
-        jButton7.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jButton7.setText("Convert");
-        jButton7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        convertLength.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        convertLength.setText("Convert");
+        convertLength.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("15 kg is equivalent to 1500 grams");
+        answerLength.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        answerLength.setForeground(new java.awt.Color(0, 0, 224));
+        answerLength.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel12.setText("Final Unit");
 
         jComboBox5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kilometer", "Meter", "Yard", "Miles", "Centimeter", "Inches" }));
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mile", "Kilometer", "Meter", "Yard", "Foot", "Centimeter", "Inche", " " }));
 
         javax.swing.GroupLayout lenghtPanelLayout = new javax.swing.GroupLayout(lenghtPanel);
         lenghtPanel.setLayout(lenghtPanelLayout);
@@ -336,7 +345,7 @@ public class Converter extends javax.swing.JFrame {
                         .addGroup(lenghtPanelLayout.createSequentialGroup()
                             .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(177, 177, 177)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(inputLength, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(lenghtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(lenghtPanelLayout.createSequentialGroup()
                                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -345,12 +354,12 @@ public class Converter extends javax.swing.JFrame {
                             .addGroup(lenghtPanelLayout.createSequentialGroup()
                                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(177, 177, 177)
-                                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(initialLength, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(answerLength, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(lenghtPanelLayout.createSequentialGroup()
                         .addGap(125, 125, 125)
-                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(193, Short.MAX_VALUE))
+                        .addComponent(convertLength, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(277, Short.MAX_VALUE))
         );
         lenghtPanelLayout.setVerticalGroup(
             lenghtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -360,7 +369,7 @@ public class Converter extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(lenghtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(initialLength, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(lenghtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -368,11 +377,11 @@ public class Converter extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(lenghtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputLength, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(convertLength, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(answerLength, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(181, Short.MAX_VALUE))
         );
 
@@ -438,7 +447,7 @@ public class Converter extends javax.swing.JFrame {
                                     .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTextField3))
                                 .addGap(29, 29, 29)))))
-                .addContainerGap(164, Short.MAX_VALUE))
+                .addContainerGap(248, Short.MAX_VALUE))
         );
         areaPanelLayout.setVerticalGroup(
             areaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -527,7 +536,7 @@ public class Converter extends javax.swing.JFrame {
                     .addGroup(volumePanelLayout.createSequentialGroup()
                         .addGap(125, 125, 125)
                         .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(193, Short.MAX_VALUE))
+                .addContainerGap(277, Short.MAX_VALUE))
         );
         volumePanelLayout.setVerticalGroup(
             volumePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -615,7 +624,7 @@ public class Converter extends javax.swing.JFrame {
                     .addGroup(tempPanelLayout.createSequentialGroup()
                         .addGap(168, 168, 168)
                         .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(193, Short.MAX_VALUE))
+                .addContainerGap(277, Short.MAX_VALUE))
         );
         tempPanelLayout.setVerticalGroup(
             tempPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -649,7 +658,6 @@ public class Converter extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
         // Weight Action
         jPanel3.removeAll();
         jPanel3.add(weightPanel);
@@ -658,18 +666,15 @@ public class Converter extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        // Length Action
+        //  Length Action
         jPanel3.removeAll();
         jPanel3.add(lenghtPanel);
         jPanel3.repaint();
         jPanel3.revalidate();
-//        CardLayout(lenghtPanel, str(jPanel3));
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        //Area Action
+        // Area Action
         jPanel3.removeAll();
         jPanel3.add(areaPanel);
         jPanel3.repaint();
@@ -686,19 +691,94 @@ public class Converter extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here
-        //Temp Action
+        // Temp Action;
         jPanel3.removeAll();
         jPanel3.add(tempPanel);
         jPanel3.repaint();
         jPanel3.revalidate();
     }//GEN-LAST:event_jButton4ActionPerformed
-//    public void CardLayout(String abc,  String xyz){
-//        xyz.removeAll();
-//        xyz.add(abc);
-//        xyz.repaint();
-//        xyz.revalidate();
-//    }
+
+    private void convertWeightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_convertWeightActionPerformed
+        if (inputWeight.getText().length() == 0) {
+            weightAnswer.setText("No weight provided");
+            weightAnswer.setForeground(Color.red);
+        } else {
+            double actualWeight = Double.parseDouble(inputWeight.getText());
+            int initialWeight = jComboBox1.getSelectedIndex();
+            int finalWeight = jComboBox2.getSelectedIndex();
+            double answer = 0;
+
+            //  Tonne
+            if (initialWeight == 0 && finalWeight == 0) {
+                answer = actualWeight;
+            } else if (initialWeight == 0 && finalWeight == 1) {
+                answer = actualWeight * 1_000;
+            } else if (initialWeight == 0 && finalWeight == 2) {
+                answer = actualWeight * 1_000_000;
+            } else if (initialWeight == 0 && finalWeight == 3) {
+                answer = actualWeight * 2204.623;
+            } else if (initialWeight == 0 && finalWeight == 4) {
+                answer = actualWeight * 35273.96;
+            }
+
+            // Kg
+            if (initialWeight == 1 && finalWeight == 0) {
+                answer = actualWeight / 1_000;
+            } else if (initialWeight == 1 && finalWeight == 1) {
+                answer = actualWeight;
+            } else if (initialWeight == 1 && finalWeight == 2) {
+                answer = actualWeight * 1_000;
+            } else if (initialWeight == 1 && finalWeight == 3) {
+                answer = actualWeight * 2.204623;
+            } else if (initialWeight == 1 && finalWeight == 4) {
+                answer = actualWeight * 35.27396;
+            }
+
+            // g
+            if (initialWeight == 2 && finalWeight == 0) {
+                answer = actualWeight / 1_000_000;
+            } else if (initialWeight == 2 && finalWeight == 1) {
+                answer = actualWeight / 1_000;
+            } else if (initialWeight == 2 && finalWeight == 2) {
+                answer = actualWeight;
+            } else if (initialWeight == 2 && finalWeight == 3) {
+                answer = actualWeight * 0.002204623;
+            } else if (initialWeight == 2 && finalWeight == 4) {
+                answer = actualWeight * 0.03527396;
+            }
+
+            // pound
+            if (initialWeight == 3 && finalWeight == 0) {
+                answer = actualWeight * 0.0004535924;
+            } else if (initialWeight == 3 && finalWeight == 1) {
+                answer = actualWeight * 0.4535924;
+            } else if (initialWeight == 3 && finalWeight == 2) {
+                answer = actualWeight * 453.5924;
+            } else if (initialWeight == 3 && finalWeight == 3) {
+                answer = actualWeight;
+            } else if (initialWeight == 3 && finalWeight == 4) {
+                answer = actualWeight * 16;
+            }
+
+            // ounce
+            if (initialWeight == 3 && finalWeight == 0) {
+                answer = actualWeight * 0.00002834952;
+            } else if (initialWeight == 3 && finalWeight == 1) {
+                answer = actualWeight * 0.02834952;
+            } else if (initialWeight == 3 && finalWeight == 2) {
+                answer = actualWeight * 28.34952;
+            } else if (initialWeight == 3 && finalWeight == 3) {
+                answer = actualWeight / 16;
+            } else if (initialWeight == 4 && finalWeight == 4) {
+                answer = actualWeight;
+            }
+
+            weightAnswer.setText(actualWeight + " " + jComboBox1.getSelectedItem() + " is equivalent to " + answer + " " + jComboBox2.getSelectedItem());
+            weightAnswer.setForeground(Color.blue);
+        }
+//        System.out.println();
+    }//GEN-LAST:event_convertWeightActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -735,21 +815,24 @@ public class Converter extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel answerLength;
     private javax.swing.JPanel areaPanel;
+    private javax.swing.JButton convertLength;
+    private javax.swing.JButton convertWeight;
+    private javax.swing.JComboBox<String> initialLength;
+    private javax.swing.JTextField inputLength;
+    private javax.swing.JTextField inputWeight;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox10;
     private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JComboBox<String> jComboBox6;
@@ -758,7 +841,6 @@ public class Converter extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -780,20 +862,19 @@ public class Converter extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JPanel lenghtPanel;
     private javax.swing.JPanel tempPanel;
     private javax.swing.JPanel volumePanel;
+    private javax.swing.JLabel weightAnswer;
     private javax.swing.JPanel weightPanel;
     // End of variables declaration//GEN-END:variables
+
 }
